@@ -1,1 +1,41 @@
-<ion-nav [root]="rootPage"></ion-nav>
+<ion-split-pane when='false'>
+    <ion-menu [content]="content">
+        <ion-header>
+            <ion-toolbar>
+                <ion-title>
+                    <img src="assets/imgs/logo-white-min.png" />
+                </ion-title>
+            </ion-toolbar>
+        </ion-header>
+
+        <ion-content>
+            <ion-list>
+                <button menuClose ion-item (click)="openPage('LiteraturePage')">
+                    literature
+                    <ion-icon name="ios-arrow-forward"></ion-icon>
+                </button>
+                <button menuClose ion-item (click)="openPage('ProductsPage')">
+                    products
+                    <ion-icon name="ios-arrow-forward"></ion-icon>
+                </button>
+                <button menuClose ion-item (click)="openPage('FindProductPage')">
+                    find a product
+                    <ion-icon name="ios-arrow-forward"></ion-icon>
+                </button>
+                <button menuClose ion-item (click)="openPage('NewsEventsPage')">
+                    news & press
+                    <ion-icon name="ios-arrow-forward"></ion-icon>
+                </button>
+            </ion-list>
+            <ion-item class='email_item'>
+                <ion-label floating>Email Address</ion-label>
+                <ion-input type='email' [(ngModel)]='email'></ion-input>
+            </ion-item>
+            <div class='btw' [ngClass]="{'disabled': email==''}" tappable (click)='signup()'>SING UP FOR UPDATES</div>
+        </ion-content>
+
+    </ion-menu>
+
+    <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+    <ion-nav [root]="rootPage" main #content swipeBackEnabled="false"></ion-nav>
+</ion-split-pane>

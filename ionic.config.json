@@ -1,5 +1,13 @@
 {
   "name": "Lubegard3",
-  "integrations": {},
-  "type": "ionic-angular"
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://www.lubegard.com/api"
+    }
+  ]
 }

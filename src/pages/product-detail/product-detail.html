@@ -1,0 +1,57 @@
+<!--
+  Generated template for the ProductDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{item?.acf.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>{{item?.acf.name}}</h1>
+  <div class='div_img'>
+    <img src='{{item?.acf.photos[0].image.url}}' />
+  </div>
+  <div class='buttons'>
+    <div class='btw' [ngClass]="{'outline': !isDesc}" tappable (click)='isDesc=true'>Description</div>
+    <div class='btw' [ngClass]="{'outline': isDesc}" tappable (click)='isDesc=false'>Benefits</div>
+  </div>
+
+  <div *ngIf='isDesc' class='desc' [innerHTML]="item?.acf.description"></div>
+
+  <div *ngIf='!isDesc'>
+    <div class='desc' [innerHTML]="item?.acf.add_section[0].copy"></div>
+    <h2 class='title' tappable (click)='show1=!show1'>Downloads
+      <ion-icon *ngIf='!show1' name="ios-arrow-dropright"></ion-icon>
+      <ion-icon *ngIf='show1' name="ios-arrow-dropdown"></ion-icon>
+    </h2>
+    <ion-list *ngIf='show1'>
+      <ion-item *ngFor='let item1 of info.downloads' tappable (click)='serviceProvider.openUrl(item1.file.url)'>
+        <ion-label>{{item1.post_title}}</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <h2 class='title' tappable (click)='show2=!show2'>Sales Sheets
+      <ion-icon *ngIf='!show2' name="ios-arrow-dropright"></ion-icon>
+      <ion-icon *ngIf='show2' name="ios-arrow-dropdown"></ion-icon>
+    </h2>
+    <ion-list *ngIf='show2'>
+      <ion-item *ngFor='let item1 of info.salessheets' tappable (click)='serviceProvider.openUrl(item1.file.url)'>
+        <ion-label>{{item1.post_title}}</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <h2 class='title' tappable (click)='show3=!show3'>Where To Buy
+      <ion-icon *ngIf='!show3' name="ios-arrow-dropright"></ion-icon>
+      <ion-icon *ngIf='show3' name="ios-arrow-dropdown"></ion-icon>
+    </h2>
+    <ion-list *ngIf='show3'>
+      <ion-item *ngFor='let item1 of info.vendors' tappable (click)='serviceProvider.openUrl(item1.link)'>
+        <ion-label>{{item1.post_title}}</ion-label>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

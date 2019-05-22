@@ -1,0 +1,13 @@
+page-products {
+    @media screen and (min-width: 768px) {
+        ion-card.card {
+            width: calc(50% - 20px);
+            display: inline-block;
+        }
+    }
+    ion-item.item {
+        ion-label {
+            white-space: normal;
+        }
+    }
+}

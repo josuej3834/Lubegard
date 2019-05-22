@@ -14,3 +14,122 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+body > div > img {
+    width: 320px !important;
+    height: auto !important;
+    margin-top: 0px !important;
+    margin-left: 0px !important;
+    top: 0 !important;
+    left: calc(50% - 160px) !important;
+    object-fit: cover;
+    display: none !important;
+}
+
+
+ion-app.md {
+    font-size: 14px;
+    font-family: -apple-system;
+    font-family: "-apple-system", "Helvetica Neue", "Roboto", "Segoe UI", sans-serif;
+}
+ion-content.content {
+    background: #000;
+    .scroll-content {
+        overflow-y: auto;
+    }
+}
+.btw {
+    background-color: #BD2531;
+    border: 1px solid #BD2531;
+    color: #fff;
+    text-align: center;
+    padding: 0 12px;
+    min-width: 52px;
+    min-height: 47px;
+    font-size: 16px;
+    line-height: 46px;
+    cursor: pointer;
+    max-width: 320px;
+    margin: auto;
+    margin-top: 20px;
+    &.outline {
+        color: #aaa;
+        background: transparent;
+        border: 1px solid #aaa;
+    }
+    &.disabled {
+        opacity: 0.5;
+    }
+}
+
+h2.title {
+    background: #BD2531;
+    text-align: center;
+    font-size: 22px;
+    height: 44px;
+    line-height: 44px;
+    color: #fff;
+    ion-icon {
+        float: right;
+        margin-top: 8px;
+        margin-right: 12px;
+    }
+}
+ion-menu {
+    ion-header.header {
+        .toolbar-background {
+            background: transparent;
+        }
+        img {
+            margin-top: 10px;
+        }
+    }
+    ion-content.content {
+        border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    ion-list.list {
+        border: 0px !important;
+        margin: 0px;
+        button.item {
+            margin-top: 20px;
+            border: 0px !important;
+            background: #BD2531;
+            color: #fff;
+            text-transform: uppercase;
+            .item-inner {
+                border: 0px !important;
+                padding-right: 8px !important;
+                background: none !important;
+            }
+            ion-icon {
+                float: right;
+            }
+        }
+        &::after {
+            display: none;
+        }
+    }
+    .email_item {
+        margin-top: 40px;
+    }
+}
+.has-refresher > .scroll-content {
+    border: 0px;
+}
+.refresher-refreshing .spinner-crescent circle {
+    stroke: #fff;
+}
+.ion-page {
+    ion-header {
+        .toolbar-background {
+            background: #BD2531;
+        }
+        .toolbar-title,
+        .bar-button {
+            color: #fff;
+        }
+        .bar-button:hover {
+            color: rgba(255,255,255,0.8);
+        }
+    }
+}

@@ -1,0 +1,19 @@
+<!--
+  Generated template for the NewsCategoryPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <ion-title>News Category</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item *ngFor='let item of list' tappable (click)='detail(item)'>
+      <ion-label>{{item.post_title}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

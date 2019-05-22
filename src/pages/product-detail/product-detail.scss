@@ -1,0 +1,25 @@
+page-product-detail {
+    .div_img {
+        text-align: center;
+    }
+    .desc {
+        color: white;
+        padding: 16px;
+        padding-top: 0px;
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .buttons {
+        display: flex;
+        max-width: 500px;
+        margin: auto;
+        margin-bottom: 30px;
+        .btw {
+            width: 50%;
+        }
+    }
+    h1 {
+        color: #fff;
+        text-align: center;
+    }
+}
