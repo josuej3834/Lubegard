@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ServiceProvider } from '../../providers/service/service';
-
+import { SwiperConfigInterface } from 'ngx-swiper-wrapper';
 /**
  * Generated class for the ProductDetailPage page.
  *
@@ -25,6 +25,12 @@ export class ProductDetailPage {
   show1 = false;
   show2 = false;
   show3 = false;
+
+  public config: SwiperConfigInterface = {
+    direction: 'horizontal',
+    slidesPerView: 'auto',
+    pagination: true
+  };
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public serviceProvider: ServiceProvider

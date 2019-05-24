@@ -28,10 +28,10 @@
                 </button>
             </ion-list>
             <ion-item class='email_item'>
-                <ion-label floating>Email Address</ion-label>
-                <ion-input type='email' [(ngModel)]='email'></ion-input>
+                <!-- <ion-label floating>Email Address</ion-label> -->
+                <ion-input type='email' [(ngModel)]='email' placeholder="Email Address"></ion-input>
             </ion-item>
-            <div class='btw' [ngClass]="{'disabled': email==''}" tappable (click)='signup()'>SING UP FOR UPDATES</div>
+            <div class='btw' [ngClass]="{'disabled': email==''}" tappable (click)='signup()'>SIGN UP FOR EMAILS</div>
         </ion-content>
 
     </ion-menu>

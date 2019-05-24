@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
-import { LoadingController, ToastController } from 'ionic-angular';
+import { LoadingController, ToastController, App } from 'ionic-angular';
 
 @Injectable()
 
@@ -13,9 +13,10 @@ export class ServiceProvider {
 
   constructor(public http: HttpClient,
     public loadingCtrl: LoadingController,
-    public toastCtrl: ToastController
+    public toastCtrl: ToastController,
+    public app: App
   ) {
-    this.apiUrl = '/api/';
+    // this.apiUrl = '/api/';
   }
 
   showToast(msg) {
@@ -136,8 +137,9 @@ export class ServiceProvider {
     return JSON.parse(localStorage.getItem(key));
   }
 
-  public openUrl(url) {
-    var win = window.open(url, '_blank');
-    win.focus();
+  public openUrl(url, title = '') {
+    this.app.getActiveNav().push('ViewPage', { url: url, title: title });
+    // var win = window.open(url, '_blank');
+    // win.focus();
   }
 }

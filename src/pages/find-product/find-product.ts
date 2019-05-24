@@ -25,7 +25,8 @@ export class FindProductPage {
   }
 
   openFinder() {
-    window.open('https://lubegard.opticatonline.com/', '_blank');
+    this.navCtrl.push('ViewPage', { url: 'https://lubegard.opticatonline.com/', title: 'Find A Product' });
+    // window.open('https://lubegard.opticatonline.com/', '_blank');
   }
 
 }

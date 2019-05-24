@@ -23,7 +23,7 @@
     <ion-icon *ngIf='show1' name="ios-arrow-dropdown"></ion-icon>
   </h2>
   <ion-list *ngIf='show1'>
-    <ion-item *ngFor='let item of downloads' tappable (click)='serviceProvider.openUrl(item.acf.file_upload.url)'>
+    <ion-item *ngFor='let item of downloads' tappable (click)='serviceProvider.openUrl(item.acf.file_upload.url, item.acf.file_name)'>
       <ion-thumbnail item-start>
         <img src='{{item.acf.image.url}}'>
       </ion-thumbnail>
@@ -36,7 +36,7 @@
     <ion-icon *ngIf='show2' name="ios-arrow-dropdown"></ion-icon>
   </h2>
   <ion-list *ngIf='show2'>
-    <ion-item *ngFor='let item of sellSheets' tappable (click)='serviceProvider.openUrl(item.acf.file_upload.url)'>
+    <ion-item *ngFor='let item of sellSheets' tappable (click)='serviceProvider.openUrl(item.acf.file_upload.url, item.acf.file_name)'>
       <ion-label>{{item.acf.file_name}}</ion-label>
     </ion-item>
   </ion-list>
@@ -46,7 +46,7 @@
     <ion-icon *ngIf='show3' name="ios-arrow-dropdown"></ion-icon>
   </h2>
   <ion-list *ngIf='show3'>
-    <ion-item *ngFor='let item of sds' tappable (click)='serviceProvider.openUrl(item.acf.file_upload.url)'>
+    <ion-item *ngFor='let item of sds' tappable (click)='serviceProvider.openUrl(item.acf.file_upload.url, item.acf.file_name)'>
       <ion-label>{{item.acf.file_name}}</ion-label>
     </ion-item>
   </ion-list>

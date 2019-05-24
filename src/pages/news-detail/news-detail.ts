@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, NgZone } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { ServiceProvider } from '../../providers/service/service';
 
@@ -19,7 +19,9 @@ export class NewsDetailPage {
   item: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
-    public serviceProvider: ServiceProvider) {
+    public serviceProvider: ServiceProvider,
+    public zone: NgZone
+  ) {
   }
 
   ionViewDidLoad() {
@@ -28,7 +30,9 @@ export class NewsDetailPage {
   }
 
   loadData(spinner = true) {
-    this.item = this.serviceProvider.getData('newsDetail');
+    this.zone.run(() => {
+      this.item = this.serviceProvider.getData('newsDetail');
+    })
   }
 
 }

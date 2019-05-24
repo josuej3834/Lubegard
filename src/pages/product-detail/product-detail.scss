@@ -22,4 +22,16 @@ page-product-detail {
         color: #fff;
         text-align: center;
     }
+    .swiper-container {
+        height: calc(100% - 100px);
+    }
+    .swiper-slide {
+        align-items: flex-start;
+        img {
+            height: calc(100% - 30px);
+        }
+    }
+    .swiper-pagination-bullet {
+        background: rgba(255,255,255,0.7);
+    }
 }
